@@ -13,12 +13,12 @@ public class paddle extends JPanel implements KeyListener,ActionListener {
 
 	
 	private Boolean play = false;
-	private int score = 0;
-	private int totalBricks = 21;
 	private Timer timer;
 	private int delay = 3;
 	
 	private int playerX = 310;
+	
+	
 	
 	
 	public paddle() {
@@ -31,9 +31,18 @@ public class paddle extends JPanel implements KeyListener,ActionListener {
 	
 public void paint(Graphics g) {
 		//paddle
+	g.setColor(Color.black);
+	g.fillRect(1, 1, 692, 592);
+	g.setColor(Color.red);
+	g.fillRect(0, 0, 3, 592);     //border rectangle
+	g.fillRect(0, 0, 692, 3);		//border rectangle
+	g.fillRect(681, 0, 3, 592);
 		g.setColor(Color.LIGHT_GRAY);
 		g.fillRect(playerX, 550, 100, 8);   
+		g.setColor(Color.LIGHT_GRAY);
+		
 		g.dispose();
+	
 
 }
 	@Override
@@ -82,14 +91,18 @@ public void paint(Graphics g) {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-	if(play)
-	{
-		repaint();
+	
+		public void actionPerformed(ActionEvent e) {
+
+			//ball-paddle intersection
+		//	if(new Rectangle(ballPosX, ballPosY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))) {
+				//ballYdir = -ballYdir;
+			
+			
+			repaint();
 	}
 		
 	}
 	
 
-}
+
